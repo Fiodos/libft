@@ -19,3 +19,11 @@ char	*ft_tolower(char *str)
 	}
 	return (str);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char str[] = "HUHU";
+// 	printf("%s\n", ft_tolower(str));
+// 	return (0);
+// }

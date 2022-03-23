@@ -19,3 +19,11 @@ char	*ft_toupper(char *str)
 	}
 	return (str);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char str[] = "huhu!1";
+// 	printf("%s\n", ft_toupper(str));
+// 	return (0);
+// }
