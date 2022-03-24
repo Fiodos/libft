@@ -34,4 +34,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // 	return (0);
 // }
 
-// this works as intended, the onnly thing that needs to be adressed is the compiler warning regarding the const keyword
+// this works as intended, the only thing that needs to be adressed is the compiler warning regarding the const keyword

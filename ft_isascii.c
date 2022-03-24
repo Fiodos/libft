@@ -5,12 +5,14 @@ int ft_isascii(int c)
     return (0);
 }
 
-#include <stdio.h>
-int main()
-{
-    char c = '§';
-    printf("%d\n", c);
-    return (0);
-}
+// #include <stdio.h>
+// #include <ctype.h>
+// int main()
+// {
+//     unsigned char c = 123;
+//     printf("\nThe character: %c\n", c);
+//     printf("ft_isascii: %d\n", ft_isascii(c));
+//     printf("isascii:    %d\n\n", isascii(c));
+//     return (0);
+// }
 
-// take a look at it later
