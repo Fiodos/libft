@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 15:00:59 by fyuzhyk           #+#    #+#             */
+/*   Updated: 2022/03/28 15:01:00 by fyuzhyk          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 /*
 s1 = "Huhu Hi Huhu";
 set = "Huhu";
@@ -73,7 +86,7 @@ char    *ft_strtrim(char const *s1, char const *set)
     int     start;
     int     end;
     int     i;
-    
+
     start = trim_start(s1, set);
     end = trim_end(s1, set);
     i = 0;

@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 15:00:27 by fyuzhyk           #+#    #+#             */
+/*   Updated: 2022/03/28 15:00:28 by fyuzhyk          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stdlib.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -33,4 +46,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 // 	printf("strlcpy: %lu\n", strlcpy(dest, src, 4));
 // 	printf("%s\n", dest);
 // 	return (0);
-// }	
+// }

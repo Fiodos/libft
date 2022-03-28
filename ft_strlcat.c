@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 15:00:22 by fyuzhyk           #+#    #+#             */
+/*   Updated: 2022/03/28 15:00:23 by fyuzhyk          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stdlib.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
@@ -21,23 +34,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (result);
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char string1[7] = "Hello ";
-// 	char string2[10] = "there!";
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char string1[7] = "Hello ";
+	char string2[10] = "there!";
 
-// 	char string3[7] = "Hello ";
-// 	char string4[10] = "there!";
+	char string3[7] = "Hello ";
+	char string4[10] = "there!";
 
-// 	printf("My func: %lu\n", ft_strlcat(string1, string2, 7));
-// 	printf("After ft_strlcat: %s\n", string1);
-// 	printf("Str: %5lu\n", strlcat(string3, string4, 7));
-// 	printf("After strlcat: %5s\n", string3);
+	printf("My func: %lu\n", ft_strlcat(string1, string2, 7));
+	printf("After ft_strlcat: %s\n", string1);
+	printf("Str: %5lu\n", strlcat(string3, string4, 7));
+	printf("After strlcat: %5s\n", string3);
 
-// 	return (0);
-// }
+	return (0);
+}
 
 //strlcat returns the size of the concatenated string. it stops when the dst buffer is to
 // "small" for the string. it always terminates the string (therefore the (size - 1) condition)

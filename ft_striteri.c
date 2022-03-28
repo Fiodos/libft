@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 14:58:45 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 14:58:46 by fyuzhyk          ###   ########.fr       */
+/*   Created: 2022/03/28 15:00:14 by fyuzhyk           #+#    #+#             */
+/*   Updated: 2022/03/28 15:00:15 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-int ft_isdigit(int c)
+void	f(unsigned int i, char *c)
 {
-    if (c > 47 && c < 58)
-        return (1);
-    return (0);
+	*c += 1;
 }
 
-// #include <stdio.h>
-// int main()
-// {
-//     int c = 'b';
-//     printf("%d\n", ft_isdigit(c));
-//     return (0);
-// }
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+
+#include <stdio.h>
+int main()
+{
+	char str[] = "abc";
+	ft_striteri(str, *f);
+	printf("%s\n", str);
+	return (0);
+}
+
+//seems to work. this one works similar to strmapi, with the difference that it actually manipulates
+//the string itself

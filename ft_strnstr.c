@@ -1,5 +1,17 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 15:00:50 by fyuzhyk           #+#    #+#             */
+/*   Updated: 2022/03/28 15:00:51 by fyuzhyk          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include <stdlib.h>
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int	i;
@@ -21,17 +33,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// 	char str[] = "Hello again";
-// 	char str2[] = "l";
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char str[] = "Hello again";
+	char str2[] = "llo";
 
-// 	printf("strnstr: %12s\n", strnstr(str, str2, 3));
-// 	printf("ft_strnstr: %s", ft_strnstr(str, str2, 3));
+	printf("strnstr: %12s\n", strnstr(str, str2, 3));
+	printf("ft_strnstr: %s", ft_strnstr(str, str2, 3));
 
-// 	return (0);
-// }
+	return (0);
+}
 
 // this works as intended, the only thing that needs to be adressed is the compiler warning regarding the const keyword
