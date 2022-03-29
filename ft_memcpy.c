@@ -6,24 +6,23 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:07 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 14:59:08 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 11:01:13 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
-
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-    while (n > 0)
-    {
-        *(char *)dest = *(char *)src;
-        dest++;
-        src++;
-        n--;
-    }
-    *(char *)dest = '\0';
-    return (dest);
+	unsigned int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		*(char *)dest = *(char *)src;
+		dest++;
+		src++;
+		i++;
+	}
+	return (dest);
 }
 
 // #include <stdio.h>
@@ -31,9 +30,6 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 // {
 //     char src[] = "Source";
 //     char dest[7];
-//     ft_memcpy(dest, src, 5);
-//     printf("%s\n", dest);
+//     printf("%s\n", ft_memcpy(dest, src, 7));
 //     return (0);
 // }
-
-// seems to work as well

@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:40 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:00:41 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 09:34:26 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int ft_strlen(const char *s) // include as libft later
     return (len);
 }
 
-char f(unsigned int i, char c)
-{
-	char str;
-	str = c + 1;
-	return (str);
-}
+// char f(unsigned int i, char c)
+// {
+// 	char str;
+// 	str = c + 1;
+// 	return (str);
+// }
 
 // char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // {

@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:57:39 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 14:59:48 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 09:28:38 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ void	ft_putnbr_fd(int n, int fd)
 	return ;
 }
 
-#include <stdio.h>
-int main()
-{
-	int test = -2147483648;
-	ft_putnbr_fd(test, 1);
-	return (0);
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	int test = -2147483648;
+// 	ft_putnbr_fd(test, 1);
+// 	return (0);
+// }

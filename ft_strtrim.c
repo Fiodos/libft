@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:01:00 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 17:17:37 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,48 +18,40 @@ trimmed string = " Hi ";
 */
 
 #include <stdlib.h>
-int ft_strlen(const char *s) //include it as .h later
-{
-    int len;
-
-    len = 0;
-    while (s[len] != '\0')
-        len++;
-    return (len);
-}
+#include "libft.h"
 
 int trim_start(char const *s1, char const *set)
 {
-    int str_len;
-    int set_len;
-    int i;
-    int j;
+	int	str_len;
+	int	set_len;
+	int	i;
+	int	j;
 
-    str_len = ft_strlen(s1);
-    set_len = ft_strlen(set);
-    i = 0;
-    j = 0;
-    while (i < str_len)
-    {
-        while (s1[i] == set[j])
-        {
-            i++;
-            j++;
-        }
-        if (j == set_len)
-            return (i);
-        j = 0;
-        i++;
-    }
-    return (i);
+	str_len = ft_strlen(s1);
+	set_len = ft_strlen(set);
+	i = 0;
+	j = 0;
+	while (i < str_len)
+	{
+		while (s1[i] == set[j])
+		{
+			i++;
+			j++;
+		}
+		if (j == set_len)
+			return (i);
+		j = 0;
+		i++;
+	}
+	return (i);
 }
 
 int trim_end(char const *s1, char const *set)
 {
-    int str_len;
-    int set_len;
-    int i;
-    int j;
+	int	str_len;
+	int	set_len;
+	int	i;
+	int	j;
 
     str_len = ft_strlen(s1);
     set_len = ft_strlen(set);
@@ -103,13 +95,13 @@ char    *ft_strtrim(char const *s1, char const *set)
     return (result);
 }
 
-// #include <stdio.h>
-// int main()
-// {
-//     char *s1 = "Huhu Hi uhuH";
-//     char *set = "H";
-//     char *result = ft_strtrim(s1, set);
-//     printf("%s\n", result);
-//     return (0);
-// }
+#include <stdio.h>
+int main()
+{
+    char *s1 = "Huhu Hi uhuH";
+    char *set = "Hu";
+    char *result = ft_strtrim(s1, set);
+    printf("%s\n", result);
+    return (0);
+}
 // not exactly sure if it should work THIS way, but seems good to me

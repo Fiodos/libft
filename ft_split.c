@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:00:00 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 09:28:43 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,18 +139,18 @@ char    **ft_split(char const *s, char c)
     return (result);
 }
 
-int main()
-{
-    char *s = "HelloCwhatsCup!";
-    char c = 'C';
-    int i = 0;
-    char **result;
-    result = ft_split(s, c);
-    while (i < 5)
-    {
-        printf("%s\n", result[i]);
-        i++;
-    }
-    return (0);
-}
+// int main()
+// {
+//     char *s = "HelloCwhatsCup!";
+//     char c = 'C';
+//     int i = 0;
+//     char **result;
+//     result = ft_split(s, c);
+//     while (i < 5)
+//     {
+//         printf("%s\n", result[i]);
+//         i++;
+//     }
+//     return (0);
+// }
 // seems to work!

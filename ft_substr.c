@@ -6,33 +6,53 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:01:02 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:01:03 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 17:00:06 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdlib.h>
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+#include "libft.h"
+char	*ft_substr(char const *s, unsigned int start, size_t len) //should be size_t
 {
 	unsigned int		i;
 	char				*substr;
 
 	i = 0;
-	substr = malloc(sizeof(char) * len);
-	if (substr == NULL)
-		return (NULL);
+	if (len > (unsigned int)ft_strlen(s))
+		substr = malloc(sizeof(char) * ft_strlen(s));
+	else
+		substr = malloc(sizeof(char) * len);
+	if (substr == 0)
+		return (0);
+	if (start >= (unsigned int)ft_strlen(s))
+	{
+		while (i < (unsigned int)ft_strlen(s))
+			substr[i++] = '\0';
+		return (substr);
+	}
+	if (len == 0 && start == 0)
+	{
+		substr[i] = '\0';
+		return (substr);
+	}
 	while (s[start + i] != '\0' && i < len)
 	{
 		substr[i] = s[start + i];
 		i++;
 	}
+	substr[i] = '\0';
 	return (substr);
 }
 
 // #include <stdio.h>
+// #include <string.h>
 // int main()
 // {
-// 	char *array = "Huhu";
-// 	printf("\nresult: %s\n", ft_substr(array, 0, 5253523523524999));
+// 	char *array = "test";
+// 	char *test = ft_substr(array, 1, 2);
+// 	printf("\nresult: %s\n\n", test);
+// 	printf("%d\n", strcmp("es", test));
 // 	return (0);
 // }
+
+

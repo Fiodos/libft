@@ -6,23 +6,25 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:02 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 14:59:03 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 12:20:42 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
-int ft_memcmp(const void *str1, const void *str2, size_t n)
+int ft_memcmp(const void *str1, const void *str2, unsigned int n)
 {
-  while (n > 0)
-  {
-    if (*(char *)str1 != *(char *)str2)
-      return (*(char *)str1 - *(char *)str2);
-    str1++;
-    str2++;
-    n--;
-  }
-  return (*(char *)str1 - *(char *)str2);
+	int result;
+
+	result = 0;
+	while (n > 0)
+	{
+	if (*(unsigned char *)str1 != *(unsigned char *)str2)
+		return (*(unsigned char *)str1 - *(unsigned char *)str2);
+	result = *(unsigned char *)str1 - *(unsigned char *)str2;
+	str1++;
+	str2++;
+	n--;
+	}
+	return (result);
 }
 
 // #include <stdio.h>
@@ -30,10 +32,10 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
 
 // int main()
 // {
-//     char *str1 = " ";
-//     char *str2 = "";
+//     char *str1 = "Hallo";
+//     char *str2 = "H";
 
-//     int ret = memcmp(str1, str2, 2);
+//     int ret = memcmp(str1, str2, 1);
 //     printf("%d\n", ret);
 //     printf("memcmp: ");
 //     if(ret > 0)
@@ -45,7 +47,7 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
 
 //     printf("\n");
 
-//     int ret2 = ft_memcmp(str1, str2, 2);
+//     int ret2 = ft_memcmp(str1, str2, 1);
 //     printf("%d\n", ret2);
 //     printf("ft_memcmp: ");
 //     if(ret2 > 0)

@@ -6,37 +6,23 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:01:06 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:01:07 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 10:37:32 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-char	*ft_tolower(char *str)
+int	ft_tolower(int c)
 {
-	int	str_len;
-	int	i;
-
-	str_len = 0;
-	while (str[str_len] != '\0')
-	{
-		str_len++;
-	}
-	i = 0;
-	while (str_len > i)
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-		str[i] += 32;
-		}
-		i++;
-	}
-	return (str);
+	if (c > 64 && c < 91)
+		return (c + 32);
+	return (c);
 }
+
 
 // #include <stdio.h>
 // int main()
 // {
-// 	char str[] = "HUHU";
-// 	printf("%s\n", ft_tolower(str));
+// 	char c = 'c';
+// 	printf("%c\n", ft_tolower(c));
 // 	return (0);
 // }

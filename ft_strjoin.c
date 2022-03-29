@@ -6,23 +6,13 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:18 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:00:19 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/29 17:06:06 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stdlib.h>
-int ft_strlen(const char *s) // need to include it as a .h later
-{
-    int len;
-
-    len = 0;
-    while (s[len] != '\0')
-        len++;
-    return (len);
-}
-
-
+#include "libft.h"
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		s1_len;
@@ -34,8 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s2_len = ft_strlen(s2);
 	i = 0;
 	str = malloc(sizeof(char) * (s1_len + s2_len));
-	if (str == NULL)
-		return (NULL);
+	if (str == 0)
+		return (0);
 	while (i < (s1_len + s2_len))
 	{
 		while (i < s1_len)
@@ -46,6 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i++] = *s2;
 		s2++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
