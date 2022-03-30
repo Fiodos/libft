@@ -11,48 +11,43 @@
 /* ************************************************************************** */
 
 #include <string.h>
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
-{
-	unsigned char	*buffer;
-	unsigned int	i;
+#include "libft.h"
 
-	i = 0;
-	buffer = 0;
-	while (i < n)
-    {
-        buffer[i] = *((char *)src + i);
-		i++;
-    }
-	i = 0;
-    while (i < n)
-    {
-        *((char *)dest + i) = buffer[i];
-        dest++;
-        i++;
-    }
-    return (dest);
+void	*ft_memmove(void *dest, const void *src, unsigned int n) // take a look at it later!
+{
+	char			*ptr_dest;
+	char			*ptr_src;
+
+	ptr_dest = (char *)dest;
+	ptr_src = (char *)src;
+	if (dest == src)
+		return (dest);
+	if (ptr_src < ptr_dest)
+	{
+		while (n)
+		{
+			n--;
+			*(ptr_dest + n) = *(ptr_src + n);
+		}
+		return (dest);
+	}
+	while (n)
+	{
+		n--;
+		*ptr_dest = *ptr_src;
+		ptr_dest++;
+		ptr_src++;
+	}
+	return (dest);
 }
 
 // #include <stdio.h>
 // #include <string.h>
 // int main()
 // {
-//     char dest[] = "Haha";
-//     char src[] = "Huhu";
-//     //ft_memmove(dest, src, sizeof(char) * 2);
-//     memmove(dest, src, sizeof(char) * 2);
-//     printf("%s\n", dest);
-//     return (0);
-// }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	char *buffer;
-// 	printf("%s\n", buffer);
+// 	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
+// 	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
+// 	ft_memmove(sResult + 1, sResult, 2);
+// 	printf("Final: %s\n", sResult);
 // 	return (0);
 // }
-
-
-// key difference between memmove and memcpy is that memmove is safer to use, because it will copy the
-// bytes into a buffer first, and into the dest afterwards (so it avoids overlap)

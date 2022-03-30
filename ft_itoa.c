@@ -10,16 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-
-int	digit_count(int n)
+#include "libft.h"
+static int	digit_count(int n)
 {
 	int i;
 
 	i = 0;
+	if (n == 0)
+		i++;
+	if (n < 0)
+		n *= (-1);
+	if (n == -2147483648)
+		return (10);
 	while (n > 0)
 	{
 		n = n / 10;
@@ -28,17 +31,7 @@ int	digit_count(int n)
 	return (i);
 }
 
-int ft_strlen(const char *s) //include from the lib later;
-{
-    int len;
-
-    len = 0;
-    while (s[len] != '\0')
-        len++;
-    return (len);
-}
-
-char	*rev_str(char *str)
+static char	*rev_str(char *str)
 {
 	char	temp;
 	int		i;
@@ -57,6 +50,25 @@ char	*rev_str(char *str)
 	return (str);
 }
 
+static char	*negative_int(int n, char *num)
+{
+	int				i;
+	unsigned int	j;
+	int				digit;
+
+	i = 0;
+	j = n * (-1);
+	while (j > 0)
+	{
+		digit = j % 10;
+		num[i++] = digit + '0';
+		j = j / 10;
+	}
+	num[i++] = '-';
+	num[i] = '\0';
+	rev_str(num);
+	return (num);
+}
 
 char	*ft_itoa(int n)
 {
@@ -65,16 +77,13 @@ char	*ft_itoa(int n)
 	int		i;
 
 	num = malloc(sizeof(char) * digit_count(n) + 1);
-	if (num == NULL)
-		return (NULL);
+	if (num == 0)
+		return (0);
 	i = 0;
-	if (n == -2147483648)
-		return ("-2147483648");
+	if (n == 0)
+		num[i++] = '0';
 	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= (-1);
-	}
+		return (negative_int(n, num));
 	while (n > 0)
 	{
 		digit = n % 10;
@@ -86,6 +95,7 @@ char	*ft_itoa(int n)
 	return (num);
 }
 
+// #include <stdio.h>
 // int main()
 // {
 // 	int		n = -2147483648;
