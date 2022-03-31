@@ -4,12 +4,16 @@ SRC = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft
 ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o\
 ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o\
 ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o\
-ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o\
+ft_lstadd_back.o
 
 all: $(NAME)
 
 $(NAME): $(SRC)
 	ar rc $(NAME) $(SRC)
+
+make bonus: $(SRC) $(NAME)
+	ar rc $(NAME) $(SRC) ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o
 
 ft_atoi.o: ft_atoi.c
 	gcc -c $(CFLAGS) ft_atoi.c -o ft_atoi.o
@@ -112,6 +116,21 @@ ft_tolower.o: ft_tolower.c
 
 ft_toupper.o: ft_toupper.c
 	gcc -c $(CFLAGS) ft_toupper.c -o ft_toupper.o
+
+ft_lstnew.o: ft_lstnew.c
+	gcc -c $(CFLAGS) ft_lstnew.c -o ft_lstnew.o
+
+ft_lstadd_front.o: ft_lstadd_front.c
+	gcc -c $(CFLAGS) ft_lstadd_front.c -o ft_lstadd_front.o
+
+ft_lstsize.o: ft_lstsize.c
+	gcc -c $(CFLAGS) ft_lstsize.c -o ft_lstsize.o
+
+ft_lstlast.o: ft_lstlast.c
+	gcc -c $(CFLAGS) ft_lstlast.c -o ft_lstlast.o
+
+ft_lstadd_back.o: ft_lstadd_back.c
+	gcc -c $(CFLAGS) ft_lstadd_back.c -o ft_lstadd_back.o
 
 re: fclean all
 	fclean all
