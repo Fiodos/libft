@@ -6,16 +6,15 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:58:50 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 14:58:51 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:19:04 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c > 31 && c < 127)
-        return (1);
-    return (0);
+	if (c > 31 && c < 127)
+		return (1);
+	return (0);
 }
 
 // #include <stdio.h>

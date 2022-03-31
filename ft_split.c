@@ -6,11 +6,10 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 09:28:43 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:29:41 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 static int	count_elements(char const *s, char c)
 {

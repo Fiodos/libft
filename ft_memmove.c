@@ -6,17 +6,15 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:12 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 11:57:09 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:24:53 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
-
-void	*ft_memmove(void *dest, const void *src, unsigned int n) // take a look at it later!
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char			*ptr_dest;
-	char			*ptr_src;
+	char	*ptr_dest;
+	char	*ptr_src;
 
 	ptr_dest = (char *)dest;
 	ptr_src = (char *)src;

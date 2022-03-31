@@ -6,63 +6,27 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:40 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 09:34:26 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 11:19:38 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int ft_strlen(const char *s) // include as libft later
-{
-    int len;
-
-    len = 0;
-    while (s[len] != '\0')
-        len++;
-    return (len);
-}
-
-// char f(unsigned int i, char c)
-// {
-// 	char str;
-// 	str = c + 1;
-// 	return (str);
-// }
-
-// char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-// {
-// 	unsigned int	i;
-// 	char			*result;
-
-// 	i = 0;
-// 	if (s == NULL || f == NULL)
-// 		return (NULL);
-// 	result = malloc(strlen(s));
-// 	strcpy(result, s);
-// 	while (result[i])
-// 	{
-// 		result[i] = (*f)(i, result[i]);
-// 		i++;
-// 	}
-// 	return (result);
-// }
-
-
+#include "libft.h"
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char				*result;
 	unsigned int		i;
 	int					len;
 
-	len = ft_strlen(s);
-	result = malloc(sizeof(char) * len);
-	if (s == NULL || f == NULL)
-		return (NULL);
 	i = 0;
+	len = ft_strlen(s);
+	if (len == 0)
+	{
+		result = malloc(sizeof(char) * 1);
+		result[i] = '\0';
+		return (result);
+	}
+	else
+		result = malloc(sizeof(char) * len);
 	while (s[i] != '\0')
 	{
 		result[i] = f(i, s[i]);
@@ -71,6 +35,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
+// #include <string.h>
+// #include <stdio.h>
 // int main()
 // {
 // 	char str1[] = "abc";

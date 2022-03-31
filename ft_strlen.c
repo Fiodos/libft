@@ -6,19 +6,19 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:35 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 15:00:36 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:35:45 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_strlen(const char *s)
+#include "libft.h"
+size_t	ft_strlen(const char *s)
 {
-    int len;
+	int	len;
 
-    len = 0;
-    while (s[len] != '\0')
-        len++;
-    return (len);
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
 
 // #include <stdio.h>

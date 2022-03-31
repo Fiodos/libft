@@ -6,12 +6,12 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:22 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 15:08:26 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:45:31 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	unsigned int	dst_size;
 	unsigned int	src_size;

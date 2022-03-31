@@ -6,23 +6,23 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:21 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 09:32:46 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:45:07 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-void *ft_memset(void *b, int c, unsigned int len)
+#include "libft.h"
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned int i;
+	unsigned int	i;
 
-    i = 0;
-    while (i < len)
-    {
-        *(int *)b = c;
-        i++;
-        b++;
-    }
-    return (b);
+	i = 0;
+	while (i < n)
+	{
+		*(int *)s = c;
+		i++;
+		s++;
+	}
+	return (s);
 }
 
 // #include <stdio.h>
@@ -36,5 +36,3 @@ void *ft_memset(void *b, int c, unsigned int len)
 //     printf("%s\n", buffer);
 //     return (0);
 // }
-
-//seems to work fine. not exactly sure about the typecast

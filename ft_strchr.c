@@ -6,23 +6,23 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:03 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 13:52:37 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:31:41 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (str[i] == (unsigned char)c) //why does it need to be unsigned char?
-			return ((char *)str + i);
+		if (s[i] == (unsigned char)c) //why does it need to be unsigned char?
+			return ((char *)s + i);
 		i++;
 	}
 	if (c == '\0')
-		return ((char *)str + i);
+		return ((char *)s + i);
 	return (0);
 }
 

@@ -6,33 +6,11 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:57:39 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 09:28:38 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:29:08 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
-#include <stdio.h>
-void	ft_putchar_fd(char c, int fd)
-{
-	const void *ptr;
-
-	ptr = &c;
-	write (fd, ptr, 1);
-}
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	int			i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-}
-
+#include "libft.h"
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	nb;

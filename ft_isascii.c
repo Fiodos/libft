@@ -6,16 +6,15 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:58:40 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/28 14:58:41 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:18:41 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c < 128 && c >= 0)
-        return (1);
-    return (0);
+	if (c < 128 && c >= 0)
+		return (1);
+	return (0);
 }
 
 // #include <stdio.h>

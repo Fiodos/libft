@@ -6,16 +6,15 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:58:32 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 09:30:49 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:18:30 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if ((c > 64 && c < 91) || (c > 96 && c < 123))
-        return (1);
-    return (0);
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
+	return (0);
 }
 
 // #include <stdio.h>

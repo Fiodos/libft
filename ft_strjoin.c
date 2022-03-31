@@ -6,12 +6,10 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:18 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 17:06:06 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:33:00 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
 #include "libft.h"
 char	*ft_strjoin(char const *s1, char const *s2)
 {

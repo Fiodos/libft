@@ -6,13 +6,11 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 17:17:37 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:40:37 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-
 static int	count_mem(char const *s1, char const *set) // counting how many elements will be in the result string
 {
 	int	i;

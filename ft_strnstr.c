@@ -6,12 +6,11 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:50 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/29 09:35:08 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/03/31 10:46:56 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
+#include "libft.h"
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	unsigned int	i;
@@ -42,8 +41,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 // 	printf("strnstr: %12s\n", strnstr(str, str2, 3));
 // 	printf("ft_strnstr: %s", ft_strnstr(str, str2, 3));
-
 // 	return (0);
 // }
 
-// this works as intended, the only thing that needs to be adressed is the compiler warning regarding the const keyword
