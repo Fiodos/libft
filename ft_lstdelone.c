@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:17:26 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/01 15:33:18 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/01 16:22:12 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	del(lst->content);
-	del(lst);
+	free(lst);
 }
 
 // #include <stdio.h>
