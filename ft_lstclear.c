@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 13:15:48 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/01 15:08:25 by fyuzhyk          ###   ########.fr       */
+/*   Created: 2022/04/01 15:33:31 by fyuzhyk           #+#    #+#             */
+/*   Updated: 2022/04/01 16:00:26 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+//**lst is the pointer to the header pointer;
 #include "libft.h"
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*result;
-	result = malloc(sizeof(t_list));
-	result->content = content;
-	result->next = NULL;
-	return (result);
+	t_list	*curr;
+	t_list	*next;
+
+	curr = (*lst);
+	//next = curr->next;
+	while (curr->next != 0)
+	{
+		next = curr->next;
+		ft_lstdelone(curr, del);
+		curr = next;
+	}
+	lst = NULL;
 }
 
-// #include <stdio.h>
-// int main()
-// {
-// 	t_list *n1;
-// 	n1 = ft_lstnew("Huhu");
-// 	printf("%p\n", n1->next);
-// 	return (0);
-// }

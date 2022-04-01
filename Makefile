@@ -5,7 +5,7 @@ ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memse
 ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o\
 ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o\
 ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o\
-ft_lstadd_back.o
+ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o
 
 all: $(NAME)
 
@@ -13,7 +13,7 @@ $(NAME): $(SRC)
 	ar rc $(NAME) $(SRC)
 
 make bonus: $(SRC) $(NAME)
-	ar rc $(NAME) $(SRC) ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o
+	ar rc $(NAME) $(SRC) ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o
 
 ft_atoi.o: ft_atoi.c
 	gcc -c $(CFLAGS) ft_atoi.c -o ft_atoi.o
@@ -131,6 +131,12 @@ ft_lstlast.o: ft_lstlast.c
 
 ft_lstadd_back.o: ft_lstadd_back.c
 	gcc -c $(CFLAGS) ft_lstadd_back.c -o ft_lstadd_back.o
+
+ft_lstdelone.o: ft_lstdelone.c
+	gcc -c $(CFLAGS) ft_lstdelone.c -o ft_lstdelone.o
+
+ft_lstclear.o: ft_lstclear.c
+	gcc -c $(CFLAGS) ft_lstclear.c -o ft_lstclear.o
 
 re: fclean all
 	fclean all

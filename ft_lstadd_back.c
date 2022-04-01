@@ -6,17 +6,24 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:08:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 16:15:20 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/01 13:16:33 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last_node;
+	t_list *last;
 
-	last_node = ft_lstlast(*lst);
-	last_node->next = new;
+	if (*lst == 0)
+	{
+		*lst = new;
+		new->next = NULL;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
+	new = ft_lstlast(new); //in case the new represents the start of another linked list;
 	new->next = NULL;
 }
 
@@ -34,5 +41,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 // 	ft_lstadd_back(&head, n4);
 // 	printf("%s\n", n3->next->content);
+// 	printf("%p\n", n4->next);
 // 	return (0);
 // }

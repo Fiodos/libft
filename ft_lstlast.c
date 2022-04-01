@@ -6,16 +6,21 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:02:46 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 16:06:53 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/01 12:57:29 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 t_list	*ft_lstlast(t_list *lst)
 {
-	while(lst->next)
-		lst++;
-	return (lst);
+	t_list	*curr;
+
+	curr = lst;
+	if (curr == 0)
+		return (curr);
+	while (curr->next != 0)
+		curr = curr->next;
+	return (curr);
 }
 
 // #include <stdio.h>
@@ -29,7 +34,9 @@ t_list	*ft_lstlast(t_list *lst)
 // 	n2->next = n3;
 // 	n3->next = NULL;
 
-// 	printf("%p\n", ft_lstlast(head));
-// 	printf("%p\n", n3);
+// 	t_list	*last = ft_lstlast(head);
+
+// 	printf("%s\n", last->content);
+// 	printf("%s\n", n3->content);
 // 	return (0);
 // }
