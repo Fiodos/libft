@@ -6,14 +6,15 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:58:55 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:18:02 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 18:35:56 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static int	digit_count(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -75,7 +76,7 @@ char	*ft_itoa(int n)
 	int		digit;
 	int		i;
 
-	num = malloc(sizeof(char) * digit_count(n) + 1);
+	num = malloc(sizeof(char) * digit_count(n) + 2);
 	if (num == 0)
 		return (0);
 	i = 0;

@@ -6,14 +6,15 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:08:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/01 13:16:33 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 11:17:08 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (*lst == 0)
 	{
@@ -23,10 +24,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
-	new = ft_lstlast(new); //in case the new represents the start of another linked list;
+	new = ft_lstlast(new);
 	new->next = NULL;
 }
 
+// line 27: in case the new represents the start of another linked list;
 // #include <stdio.h>
 // int main()
 // {

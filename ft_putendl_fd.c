@@ -6,11 +6,12 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:29 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:28:33 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 11:13:42 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);

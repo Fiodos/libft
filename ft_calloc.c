@@ -6,21 +6,22 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:58:20 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:17:27 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 19:13:28 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_calloc(size_t nelem, size_t size)
 {
 	unsigned int	i;
-	unsigned char 	*ptr;
+	unsigned char	*ptr;
 
 	i = 0;
 	ptr = malloc(nelem * size);
 	if (ptr == NULL)
 		return (ptr);
-	while (i < nelem)
+	while (i < nelem * size)
 	{
 		ptr[i] = '\0';
 		i++;

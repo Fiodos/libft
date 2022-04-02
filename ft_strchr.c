@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:03 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:31:41 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 11:19:59 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == (unsigned char)c) //why does it need to be unsigned char?
+		if (s[i] == (unsigned char)c)
 			return ((char *)s + i);
 		i++;
 	}

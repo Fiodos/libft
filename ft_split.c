@@ -6,11 +6,12 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:29:41 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 17:53:27 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static int	count_elements(char const *s, char c)
 {
 	int	i;
@@ -79,7 +80,7 @@ static void	init_element(char **result, char *element, int k)
 	i = 0;
 	len = ft_strlen(element);
 	result[k] = malloc(sizeof(char) * len + 1);
-	if (result[k] == NULL)
+	if (result[k] == 0)
 		return ;
 	while (i < len)
 	{

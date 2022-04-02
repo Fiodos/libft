@@ -6,11 +6,12 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:12 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:24:53 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 11:13:36 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*ptr_dest;

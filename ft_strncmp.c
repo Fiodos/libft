@@ -6,26 +6,29 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:44 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:46:40 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 13:51:26 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
+	unsigned char	*s1_ptr;
+	unsigned char	*s2_ptr;
 
 	i = 0;
-	while (((s1[i] != '\0') || (s2[i] != '\0')) && (i < n))
+	s1_ptr = (unsigned char *)s1;
+	s2_ptr = (unsigned char *)s2;
+	while (((*s1_ptr != '\0') || (*s2_ptr != '\0')) && (i < n))
 	{
-		if (s1[i] < s2[i])
-		{
+		if (*s1_ptr < *s2_ptr)
 			return (-1);
-		}
-		else if (s1[i] > s2[i])
-		{
+		else if (*s1_ptr > *s2_ptr)
 			return (1);
-		}
+		s1_ptr++;
+		s2_ptr++;
 		i++;
 	}
 	return (0);
@@ -40,6 +43,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // 	printf("My func: %d\n", ft_strncmp(string2, string1, 0));
 // 	printf("Str: %d\n", strncmp(string2, string1, 0));
+
+// 	printf("%d\n", strncmp("test\200", "test\0", 6));
+// 	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
 
 // 	return (0);
 // }

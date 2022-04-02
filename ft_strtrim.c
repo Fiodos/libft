@@ -6,66 +6,88 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:40:37 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 20:11:32 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static int	count_mem(char const *s1, char const *set) // counting how many elements will be in the result string
+
+static int	get_start(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
-	int	count;
+	int	control;
 
 	i = 0;
 	j = 0;
-	count = 0;
+	control = 0;
 	while (s1[i])
 	{
 		while (set[j])
 		{
 			if (s1[i] == set[j])
-				count++;
+				control = 1;
 			j++;
 		}
+		if (control == 0)
+			return (i);
 		i++;
 	}
-	return (count);
+	return (i);
+}
+
+static int	get_end(char const *s1, char const *set)
+{
+	int	i;
+	int	j;
+	int	control;
+
+	i = ft_strlen(s1) - 1;
+	j = 0;
+	control = 0;
+	while (s1[i])
+	{
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				control = 1;
+			j++;
+		}
+		if (control == 0)
+			return (i);
+		i--;
+	}
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
-	int		second_count;
+	int		start;
+	int		end;
 	int		i;
-	int		j;
-	int		k;
 
+	start = get_start(s1, set);
+	end = get_end(s1, set);
+	result = malloc(sizeof(char) * (end - start) + 1);
 	i = 0;
-	k = 0;
-	result = malloc(sizeof(char) * count_mem(s1, set) + 1);
-	while (s1[i])
+	while (start < end)
 	{
-		second_count = 0;
-		j = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-				second_count++;
-			j++;
-		}
-		if (second_count == 0)
-			result[k++] = s1[i];
+		result[i] = s1[start];
 		i++;
+		start++;
 	}
-	result[k] = '\0';
+	result[i] = '\0';
 	return (result);
 }
 
-// #include <stdio.h>
-// int main()
-// {
-// 	char *s = ft_strtrim("tripouille   xxx", " x");
-// 	printf("%s\n", s);
-// 	return (0);
-// }
+#include <stdio.h>
+int main()
+{
+	char	*s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	char	*s2 = "Hello \t  Please\n Trim me !";
+	char *result =  ft_strtrim(s1, " \n\t");
+	printf("result: %s\n", result);
+	printf("solution: %s\n", s2);
+	return (0);
+}

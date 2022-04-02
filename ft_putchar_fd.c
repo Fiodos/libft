@@ -6,11 +6,12 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:25 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/03/31 10:28:11 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/02 11:19:08 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_putchar_fd(char c, int fd)
 {
 	const void	*ptr;
@@ -27,14 +28,3 @@ void	ft_putchar_fd(char c, int fd)
 // 	ft_putchar_fd(c, fd);
 // 	return (0);
 // }
-
-
-// Short summary of FILE DESCRIPTORS
-
-// File descriptors (fd) are indexes of different in-/output (streams) inside a process
-// E.g, the standard input is by default fd = 0; the standard output = 1, standard error = 2;
-// Now, it is possible to assign files to different fds. This means, if I create a file, and I assign
-// the fd = 4 to it, and I use fd inside the write function, the func writes into the file
-
-// Because of the definition of the write func, we need to create a const void ptr first
-// in order to be able to "insert" the character into it
