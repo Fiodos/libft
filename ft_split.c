@@ -19,8 +19,8 @@ static int	count_elements(char const *s, char c)
 	int	len;
 
 	i = 0;
-	count = 0;
-	while (s[i])
+	count = 1;
+	while (s[i] != '\0')
 	{
 		if (s[i] != '\0' && s[i] != c)
 		{
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		k;
 
-	result = malloc(sizeof(char *) * count_elements(s, c) + 1);
+	result = malloc(sizeof(char *) * count_elements(s, c));
 	if (result == 0)
 		return (0);
 	i = 0;

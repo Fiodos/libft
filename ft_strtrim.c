@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 static int	get_start(char const *s1, char const *set)
 {
 	int	i;
@@ -19,10 +19,10 @@ static int	get_start(char const *s1, char const *set)
 	int	control;
 
 	i = 0;
-	j = 0;
-	control = 0;
 	while (s1[i])
 	{
+		j = 0;
+		control = 0;
 		while (set[j])
 		{
 			if (s1[i] == set[j])
@@ -43,10 +43,10 @@ static int	get_end(char const *s1, char const *set)
 	int	control;
 
 	i = ft_strlen(s1) - 1;
-	j = 0;
-	control = 0;
-	while (s1[i])
+	while (i >= 0)
 	{
+		j = 0;
+		control = 0;
 		while (set[j])
 		{
 			if (s1[i] == set[j])
@@ -62,16 +62,24 @@ static int	get_end(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*result;
-	int		start;
-	int		end;
-	int		i;
+	char			*result;
+	int				start;
+	int				end;
+	unsigned int	i;
 
 	start = get_start(s1, set);
 	end = get_end(s1, set);
-	result = malloc(sizeof(char) * (end - start) + 1);
+	if (end == -1 && start == (int)ft_strlen(s1))
+	{
+		result = malloc(sizeof(char));
+		result[0] = '\0';
+		return (result);
+	}
+	result = malloc(sizeof(char) * (end - start) + 2);
+	if (result == 0)
+		return (0);
 	i = 0;
-	while (start < end)
+	while (start <= end)
 	{
 		result[i] = s1[start];
 		i++;
@@ -81,13 +89,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 
-#include <stdio.h>
-int main()
-{
-	char	*s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	char	*s2 = "Hello \t  Please\n Trim me !";
-	char *result =  ft_strtrim(s1, " \n\t");
-	printf("result: %s\n", result);
-	printf("solution: %s\n", s2);
-	return (0);
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	char	*s1 = "   \t  \n\n \t\t  \n\n\n\n   \n \n \t\t\n  ";
+// 	//char	*s2 = "Hello \t  Please\n Trim me !";
+// 	char	*result = ft_strtrim(s1, " \n\t");
+// 	// printf("solution: %s\n", s2);
+// 	// printf("\n");
+// 	// printf("result: %s\n", result);
+// 	// printf("%d\n", strcmp(result, s2));
+// 	return (0);
+// }

@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nelem, size_t size)
 	i = 0;
 	ptr = malloc(nelem * size);
 	if (ptr == NULL)
-		return (ptr);
+		return (0);
 	while (i < nelem * size)
 	{
 		ptr[i] = '\0';
@@ -34,7 +34,6 @@ void	*ft_calloc(size_t nelem, size_t size)
 // {
 // 	char *array;
 // 	char *test;
-// 	int i = 0;
 // 	array = ft_calloc(52352342414124124, sizeof(int));
 // 	test = calloc(52352342414124124, sizeof(int));
 // 	printf("%p\n", array);
