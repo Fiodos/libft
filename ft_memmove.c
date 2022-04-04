@@ -6,38 +6,38 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:12 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/02 11:13:36 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/04 08:54:25 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*ptr_dest;
+	char	*ptr_dst;
 	char	*ptr_src;
 
-	ptr_dest = (char *)dest;
+	ptr_dst = (char *)dst;
 	ptr_src = (char *)src;
-	if (dest == src)
-		return (dest);
-	if (ptr_src < ptr_dest)
+	if (dst == src)
+		return (dst);
+	if (ptr_src < ptr_dst)
 	{
 		while (n)
 		{
 			n--;
-			*(ptr_dest + n) = *(ptr_src + n);
+			*(ptr_dst + n) = *(ptr_src + n);
 		}
-		return (dest);
+		return (dst);
 	}
 	while (n)
 	{
 		n--;
-		*ptr_dest = *ptr_src;
-		ptr_dest++;
+		*ptr_dst = *ptr_src;
+		ptr_dst++;
 		ptr_src++;
 	}
-	return (dest);
+	return (dst);
 }
 
 // #include <stdio.h>

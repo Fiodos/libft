@@ -6,31 +6,31 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:10 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/02 12:57:27 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/04 08:56:05 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s1)
 {
 	int		str_len;
 	int		i;
 	char	*ptr;
 
-	str_len = ft_strlen(s);
+	str_len = ft_strlen(s1);
 	i = 0;
 	ptr = malloc(sizeof(char) * str_len + 1);
 	if (str_len == 0)
 	{
-		ptr[i] = s[i];
+		ptr[i] = s1[i];
 		return (ptr);
 	}
 	if (ptr == 0)
 		return (ptr);
 	while (i < str_len)
 	{
-		ptr[i] = s[i];
+		ptr[i] = s1[i];
 		i++;
 	}
 	ptr[i] = '\0';
