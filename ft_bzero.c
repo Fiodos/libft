@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:58:10 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/02 11:15:32 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/06 08:50:11 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,3 @@ void	ft_bzero(void *s, size_t n)
 //     printf("%s\n", s);
 //     return (0);
 // }
-
-//not exactly sure how to properly test this one

@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:12 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/04 08:54:25 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/06 09:36:21 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		return (dst);
 	if (ptr_src < ptr_dst)
 	{
-		while (n)
+		while (n != 0)
 		{
 			n--;
 			*(ptr_dst + n) = *(ptr_src + n);
 		}
 		return (dst);
 	}
-	while (n)
+	while (n != 0)
 	{
-		n--;
 		*ptr_dst = *ptr_src;
 		ptr_dst++;
 		ptr_src++;
+		n--;
 	}
 	return (dst);
 }
