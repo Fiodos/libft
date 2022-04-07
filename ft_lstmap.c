@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 16:51:31 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/02 10:52:39 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/07 15:15:13 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*curr;
 
 	curr = lst;
+	if (curr == 0)
+		return (0);
 	second_list = ft_lstnew(f(curr->content));
 	if (second_list == 0)
 		return (0);

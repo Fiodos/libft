@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/04 08:39:38 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/07 15:03:49 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,24 +67,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int				end;
 	unsigned int	i;
 
+	if (s1 == NULL)
+		return (NULL);
+	i = 0;
 	start = get_start(s1, set);
 	end = get_end(s1, set);
 	if (end == -1 && start == (int)ft_strlen(s1))
 	{
-		result = malloc(sizeof(char));
-		result[0] = '\0';
+		result = malloc(sizeof(char) * 1);
+		result[i] = '\0';
 		return (result);
 	}
 	result = malloc(sizeof(char) * (end - start) + 2);
-	if (result == 0)
-		return (0);
-	i = 0;
+	if (result == NULL)
+		return (NULL);
 	while (start <= end)
-	{
-		result[i] = s1[start];
-		i++;
-		start++;
-	}
+		result[i++] = s1[start++];
 	result[i] = '\0';
 	return (result);
 }

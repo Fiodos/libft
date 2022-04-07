@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:00:40 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/02 16:25:32 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/07 14:24:42 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int					len;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	if (len == 0)
 		result = malloc(sizeof(char));

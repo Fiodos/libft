@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:51 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/02 11:13:50 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/04/07 10:27:30 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (s == 0)
+		return ;
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
