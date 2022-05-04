@@ -6,7 +6,7 @@
 /*   By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:59:59 by fyuzhyk           #+#    #+#             */
-/*   Updated: 2022/04/07 14:41:33 by fyuzhyk          ###   ########.fr       */
+/*   Updated: 2022/05/04 18:17:47 by fyuzhyk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ static char	*get_element(char const *s, char *element, char c, int offset)
 
 	len = get_element_len(s, c, offset);
 	element = malloc(sizeof(char) * len + 1);
-	if (element == 0)
-		return (0);
+	if (element == NULL)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
@@ -118,14 +118,6 @@ char	**ft_split(char const *s, char c)
 		else
 			i++;
 	}
-	result[k] = 0;
+	result[k] = NULL;
 	return (result);
 }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	char **result = ft_split("tripouille", ' ');
-// 	printf("%s\n", result[0]);
-// 	return (0);
-// }
