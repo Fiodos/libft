@@ -6,7 +6,7 @@
 #    By: fyuzhyk <fyuzhyk@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 18:05:06 by fyuzhyk           #+#    #+#              #
-#    Updated: 2022/04/06 08:49:34 by fyuzhyk          ###   ########.fr        #
+#    Updated: 2022/06/28 13:56:44 by fyuzhyk          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRC = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft
 ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o\
 ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o\
 ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o\
-ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o ft_printf.o ft_uint_itoa.o helper.o hexa.o specifiers.o\
+get_next_line.o get_next_line_utils.o
+
 
 BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o\
 ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
@@ -159,6 +161,27 @@ ft_lstiter.o: ft_lstiter.c
 
 ft_lstmap.o: ft_lstmap.c
 	cc -c $(CFLAGS) ft_lstmap.c -o ft_lstmap.o
+
+ft_printf.o: ft_printf.c
+	cc -c $(CFLAGS) ft_printf.c -o ft_printf.o
+
+hexa.o: hexa.c
+	cc -c $(CFLAGS) hexa.c -o hexa.o
+
+ft_uint_itoa.o: ft_uint_itoa.c
+	cc -c $(CFLAGS) ft_uint_itoa.c -o ft_uint_itoa.o
+
+helper.o: helper.c
+	cc -c $(CFLAGS) helper.c -o helper.o
+
+specifiers.o: specifiers.c
+	cc -c $(CFLAGS) specifiers.c -o specifiers.o
+
+get_next_line.o: get_next_line.c
+	cc -c $(CFLAGS) get_next_line.c -o get_next_line.o
+
+get_next_line_utils.o: get_next_line_utils.c
+	cc -c $(CFLAGS) get_next_line_utils.c -o get_next_line_utils.o
 
 fclean: clean
 	rm -f $(NAME)
